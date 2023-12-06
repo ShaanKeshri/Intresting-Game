@@ -1,26 +1,5 @@
-import { useState } from 'react';
-
 import Square from './Square';
-const Board = () => {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-
-  const [playerO, setPlayero] = useState(false);
-
-  const handleSquareClick = clickedPosition => {
-    if (squares[clickedPosition]) {
-      return;
-    }
-    setSquares(currentSquare => {
-      return currentSquare.map((squareValue, position) => {
-        if (clickedPosition == position) {
-          return playerO ? 'X' : 'O';
-        }
-        return squareValue;
-      });
-    });
-    setPlayero(currentPlayero => !currentPlayero);
-  };
-
+const Board = (squares, handleSquareClick) => {
   const renderSqure = clickedPosition => {
     return (
       <Square
