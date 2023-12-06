@@ -1,5 +1,6 @@
 import Square from './Square';
-const Board = (squares, handleSquareClick) => {
+// eslint-disable-next-line react/prop-types
+const Board = ({ squares, handleSquareClick }) => {
   const renderSqure = clickedPosition => {
     return (
       <Square
