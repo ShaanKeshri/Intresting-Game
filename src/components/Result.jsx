@@ -11,13 +11,13 @@ const Result = ({ winner, playerO, squares }) => {
     if (winner) {
       return (
         <>
-          <h2>
-            Winner is{' '}
+          <h1>
+            Player{' '}
             <span className={winner === 'X' ? 'text-green' : 'text-orange'}>
-              {winner}
+              {winner} is Winner
             </span>
             🥳
-          </h2>
+          </h1>
         </>
       );
     }
@@ -25,17 +25,19 @@ const Result = ({ winner, playerO, squares }) => {
       return (
         <>
           {' '}
-          <span className="text-orange">Game Tied</span>
+          <h1 className="text-orange">Game Tied</h1>
         </>
       );
     }
     if (!winner && !boardfull) {
       return (
         <>
-          <span className="text-black">Next Player is </span>
-          <span className={playerO ? 'text-green' : 'text-orange'}>
-            <b>{playerName}</b>
-          </span>
+          <h1>
+            <span className="text-black">Player </span>
+            <span className={playerO ? 'text-green' : 'text-orange'}>
+              {playerName} Turn
+            </span>
+          </h1>
         </>
       );
     }
